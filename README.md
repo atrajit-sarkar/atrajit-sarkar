@@ -48,11 +48,26 @@
   </tr>
 </table>
 
-<div align="center">
-  <img src="https://raw.githubusercontent.com/Atrajit-Sarkar/atrajit-sarkar/main/previews/portfolio-preview.png" width="240" alt="Portfolio preview" />
-  <img src="https://raw.githubusercontent.com/Atrajit-Sarkar/atrajit-sarkar/main/previews/twitter-preview.png" width="240" alt="Twitter preview" />
-  <img src="https://raw.githubusercontent.com/Atrajit-Sarkar/atrajit-sarkar/main/previews/linkedin-preview.png" width="240" alt="LinkedIn preview" />
-</div>
+<table>
+  <tr>
+    <td align="center">
+      <img src="https://raw.githubusercontent.com/Atrajit-Sarkar/atrajit-sarkar/main/previews/portfolio-preview.png" width="240" alt="Portfolio preview" />
+      <br>
+      <sub><strong>🌐 Portfolio</strong></sub>
+    </td>
+    <td align="center">
+      <img src="https://raw.githubusercontent.com/Atrajit-Sarkar/atrajit-sarkar/main/previews/twitter-preview.png" width="240" alt="Twitter preview" />
+      <br>
+      <sub><strong>🐦 Twitter</strong></sub>
+    </td>
+    <td align="center">
+      <img src="https://raw.githubusercontent.com/Atrajit-Sarkar/atrajit-sarkar/main/previews/linkedin-preview.png" width="240" alt="LinkedIn preview" />
+      <br>
+      <sub><strong>💼 LinkedIn</strong></sub>
+    </td>
+  </tr>
+</table>
+
 
 ---
 
@@ -62,6 +77,8 @@
   <img src="https://github-readme-streak-stats.herokuapp.com/?user=atrajit-sarkar&theme=tokyonight&hide_border=true"/>
   <br/>
   <img src="https://github-readme-stats.vercel.app/api?username=atrajit-sarkar&show_icons=true&theme=radical&hide_border=true"/>
+  <br/>
+  <img src="https://raw.githubusercontent.com/Atrajit-Sarkar/atrajit-sarkar/main/images/repoview.png" width="500" alt="LinkedIn preview""/>
 </p>
 
 ---
