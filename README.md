@@ -38,7 +38,7 @@
 ---
 
 ### 🔗 Let's Connect
-[![Twitter](https://img.shields.io/badge/-@atrajitsarkar-1DA1F2?style=flat-square&logo=Twitter&logoColor=white)](https://twitter.com/)  
+[![Twitter](https://img.shields.io/badge/-@AtrajitSarkar-1DA1F2?style=flat-square&logo=Twitter&logoColor=white)](https://twitter.com/)  
 [![LinkedIn](https://img.shields.io/badge/-LinkedIn-0077B5?style=flat-square&logo=Linkedin&logoColor=white)](https://linkedin.com/)  
 [![Portfolio](https://img.shields.io/badge/-My_Portfolio-FF6347?style=flat-square&logo=firefox&logoColor=white)](https://atrajitsarkar.dev)  
 [![Gmail](https://img.shields.io/badge/-atrajitsarkar.dev@gmail.com-D14836?style=flat-square&logo=Gmail&logoColor=white)](mailto:atrajitsarkar.dev@gmail.com)
