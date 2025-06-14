@@ -37,13 +37,26 @@
 
 ---
 
-### 🔗 Let's Connect
-[![Twitter](https://img.shields.io/badge/-@AtrajitSarkar-1DA1F2?style=flat-square&logo=Twitter&logoColor=white)](https://twitter.com/)  
-[![LinkedIn](https://img.shields.io/badge/-LinkedIn-0077B5?style=flat-square&logo=Linkedin&logoColor=white)](https://linkedin.com/)  
-[![Portfolio](https://img.shields.io/badge/-My_Portfolio-FF6347?style=flat-square&logo=firefox&logoColor=white)](https://atrajitsarkar.dev)  
-[![Gmail](https://img.shields.io/badge/-atrajitsarkar.dev@gmail.com-D14836?style=flat-square&logo=Gmail&logoColor=white)](mailto:atrajitsarkar.dev@gmail.com)
+### 🔗 Let’s Connect
+
+<table>
+  <tr>
+    <td><a href="https://atrajit-sarkar.gongobongo.org/" target="_blank"><img src="https://img.shields.io/badge/-Portfolio-24292e?style=for-the-badge&logo=firefox&logoColor=white" /></a></td>
+    <td><a href="https://x.com/AtrajitSarkar" target="_blank"><img src="https://img.shields.io/badge/-@AtrajitSarkar-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white" /></a></td>
+    <td><a href="https://www.linkedin.com/in/atrajit-sarkar-1729xxx1729/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" /></a></td>
+    <td><a href="mailto:2tbmagic@gmail.com"><img src="https://img.shields.io/badge/-Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" /></a></td>
+  </tr>
+</table>
+
+<div align="center">
+  <img src="https://raw.githubusercontent.com/Atrajit-Sarkar/atrajit-sarkar/main/previews/portfolio-preview.png" width="240" alt="Portfolio preview" />
+  <img src="https://raw.githubusercontent.com/Atrajit-Sarkar/atrajit-sarkar/main/previews/twitter-preview.png" width="240" alt="Twitter preview" />
+  <img src="https://raw.githubusercontent.com/Atrajit-Sarkar/atrajit-sarkar/main/previews/linkedin-preview.png" width="240" alt="LinkedIn preview" />
+</div>
 
 ---
+
+### 📊 GitHub Stats
 
 <p align="center">
   <img src="https://github-readme-streak-stats.herokuapp.com/?user=atrajit-sarkar&theme=tokyonight&hide_border=true"/>
