@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>アトラジット・サーカー | 数学 × テクノロジー ポートフォリオ</title>
+<meta name="description" content="アトラジット・サーカー（IIT Delhi 数学修士）フルスタック開発・数理研究・創造的表現を結ぶワンページポートフォリオ。" />
+<link rel="icon" href="tech-portfolio/assets/favicon.ico" />
+<meta name="theme-color" content="#05060a" />
+<meta property="og:title" content="アトラジット・サーカー | 数学 × テクノロジー" />
+<meta property="og:description" content="数学的厳密性とソフトウェア工学の美学を融合するフルスタック開発者 / 数学者。" />
+<meta property="og:image" content="tech-portfolio/atrajit.jpg" />
+<meta property="og:type" content="website" />
+<!-- MathJax (from math-portfolio) -->
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$','$$'], ['\\[','\\]']]
+    }
+  };
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<!-- Highlight.js for syntax highlighting -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/styles/github-dark-dimmed.min.css" media="(prefers-color-scheme: dark)">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/styles/github.min.css" media="(prefers-color-scheme: light)">
+<script defer src="https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/lib/common.min.js"></script>
+<style>
+/* Code area enhancements */
+.code-block-wrapper { position:relative; background:var(--pre-bg); border:1px solid #1f3448; border-radius:26px; overflow:hidden; box-shadow:0 16px 46px -26px #000; }
+.code-header { display:flex; align-items:center; justify-content:space-between; gap:8px; padding:10px 16px 8px; background:linear-gradient(135deg,#15263a,#0e1824); border-bottom:1px solid #1f3448; font-family:var(--font-mono); }
+.code-header .lang { font-size:.6rem; letter-spacing:.15em; text-transform:uppercase; font-weight:600; background:#1e3246; color:var(--accent); padding:6px 10px; border-radius:12px; }
+.code-header .window-dots { display:flex; gap:6px; }
+.code-header .window-dots span { width:10px; height:10px; border-radius:50%; background:#2a3d52; position:relative; }
+.code-header .window-dots span:nth-child(1){ background:#ff5f56; }
+.code-header .window-dots span:nth-child(2){ background:#ffbd2e; }
+.code-header .window-dots span:nth-child(3){ background:#27c93f; }
+.code-toolbar-buttons { display:flex; align-items:center; gap:10px; }
+.code-toolbar-buttons button { background:#1d3149; color:var(--accent); border:1px solid #25435d; font-size:.55rem; letter-spacing:.15em; padding:6px 10px; border-radius:10px; cursor:pointer; font-weight:600; display:flex; gap:6px; align-items:center; transition:var(--transition); }
+.code-toolbar-buttons button:hover{ background:#25435d; }
+.code-toolbar-buttons button:active{ transform:translateY(1px); }
+
+.code-block-wrapper pre { margin:0; padding:20px 0 24px 0; overflow:auto; font-family:var(--font-mono); font-size:.78rem; line-height:1.55; background:transparent !important; }
+.code-block-wrapper pre code { padding:0 26px 0 56px; display:block; position:relative; counter-reset:line; }
+.code-block-wrapper pre code .code-line { display:block; padding:0; position:relative; }
+.code-block-wrapper pre code .code-line:before { counter-increment:line; content:counter(line); position:absolute; left:-34px; width:26px; text-align:right; color:#446079; font-size:.6rem; letter-spacing:.1em; }
+.code-block-wrapper pre::-webkit-scrollbar{height:10px;} 
+.code-block-wrapper pre::-webkit-scrollbar-track{background:#0f1b29;} 
+.code-block-wrapper pre::-webkit-scrollbar-thumb{background:#1f3246; border-radius:20px; }
+
+/* Light theme overrides */
+.light .code-block-wrapper { background:#f5f9fd; border-color:#c7d9e9; }
+.light .code-header { background:linear-gradient(135deg,#e4eef6,#d6e5f1); border-bottom-color:#c7d9e9; }
+.light .code-header .lang { background:#d7e6f2; color:#00628e; }
+.light .code-toolbar-buttons button { background:#dce9f3; color:#00628e; border-color:#b7cdda; }
+.light .code-toolbar-buttons button:hover { background:#ceddea; }
+.light .code-block-wrapper pre code .code-line:before { color:#7d96ac; }
+:root {
+  --bg: #05060a;
+  --bg-alt: #0f1320;
+  --bg-grad: radial-gradient(circle at 25% 15%, #1d2b64 0%, #090a0f 70%);
+  --accent: #5cc9f5;
+  --accent-grad: linear-gradient(135deg,#4facfe 0%,#00f2fe 50%,#38f9d7 100%);
+  --accent-alt: #ffb347;
+  --text: #e6f1ff;
+  --text-dim: #9db3c9;
+  --danger: #ff4d67;
+  --ok: #6dffb3;
+  --radius: 18px;
+  --transition: 0.5s cubic-bezier(.65,.05,.36,1);
+  /* Added variables for code styling (from tech-portfolio) */
+  --font-mono: 'JetBrains Mono','Cascadia Code',monospace;
+  --pre-text: #cfe6ff;
+  --pre-bg: #0d1826;
+  --code-bg: #132132;
+  --code-text: #b5d5ff;
+  --code-border: #1f3448;
+  --border-radius-md: 18px;
+  --border-radius-sm: 8px;
+}
+* { box-sizing: border-box; }
+html,body { margin:0; padding:0; font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, 'Noto Sans JP', sans-serif; background: var(--bg); color: var(--text); scroll-behavior: smooth; }
+body{background: var(--bg-grad); overflow-x:hidden;}
+::-webkit-scrollbar{width:10px;}::-webkit-scrollbar-track{background:#0b0e17;}::-webkit-scrollbar-thumb{background:linear-gradient(var(--accent),#246bff);border-radius:20px;}
+
+/* Layout */
+header { position:fixed; top:0; left:0; right:0; z-index:60; backdrop-filter: blur(14px) saturate(160%); background:rgba(10,15,25,0.65); border-bottom:1px solid rgba(255,255,255,0.08); }
+nav { max-width:1250px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; padding:10px clamp(12px,2vw,30px); }
+nav .brand { font-weight:600; letter-spacing:1px; font-size:1.05rem; display:flex; align-items:center; gap:.65rem; }
+nav .brand span.logo { width:40px;height:40px; background:linear-gradient(135deg,#00d2ff,#3a7bd5); display:grid; place-items:center; border-radius:50%; font-weight:700; font-size:.9rem; box-shadow:0 0 0 4px rgba(255,255,255,0.04); position:relative; overflow:hidden; }
+nav .brand span.logo:before{content:''; position:absolute; inset:0; background:linear-gradient(45deg,#fff3,transparent); mix-blend-mode:overlay; animation:shine 5s linear infinite;}
+@keyframes shine{0%{transform:translateX(-100%);}100%{transform:translateX(100%);}}
+nav ul { list-style:none; margin:0; padding:0; display:flex; gap: clamp(.7rem,1.5vw,1.6rem); }
+nav a { text-decoration:none; color:var(--text-dim); font-size:.85rem; font-weight:500; position:relative; padding:6px 10px; border-radius:999px; transition:var(--transition); }
+nav a:hover, nav a:focus { color:var(--text); }
+nav a.active{color:#111; background:var(--accent-grad); box-shadow:0 4px 18px -6px #00f2fe55;}
+
+#themeToggle { cursor:pointer; width:42px; height:42px; display:grid; place-items:center; border-radius:50%; background:#141c2b; border:1px solid #233044; color:var(--accent); font-size:20px; transition:var(--transition); }
+#themeToggle:hover{background:#1f2b3d;}
+
+main { margin-top:68px; }
+section { position:relative; padding: clamp(60px,19vh,180px) clamp(20px,7vw,140px); max-width: 1500px; margin:0 auto; }
+section.alt{ background: linear-gradient(145deg,#08101b 0%,#020305 100%); box-shadow: inset 0 0 80px -30px #000; }
+section h2 { font-size: clamp(1.8rem, 3.6vw, 3.1rem); margin:0 0 28px; line-height:1.2; background:var(--accent-grad); -webkit-background-clip:text; background-clip:text; color:transparent; letter-spacing:.05em; }
+.lead { font-size:clamp(1rem,1.45vw,1.25rem); line-height:1.65; color:var(--text-dim); }
+
+/* Hero */
+#hero { display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); align-items:center; gap:clamp(40px,6vw,120px); }
+.hero-left { position:relative; }
+.hero-left h1 { font-size: clamp(2.2rem, 5vw, 4rem); line-height:1.05; margin:0 0 24px; font-weight:800; letter-spacing:.04em; }
+.hero-left h1 span.gradient { background:var(--accent-grad); -webkit-background-clip:text; background-clip:text; color:transparent; }
+.hero-meta { display:flex; flex-wrap:wrap; gap:.6rem; margin:18px 0 32px; }
+.badge { background:#101b2a; color:var(--accent); padding:6px 14px; font-size:.7rem; letter-spacing:.1em; font-weight:600; border-radius:999px; border:1px solid #1e3246; text-transform:uppercase; position:relative; overflow:hidden; }
+.badge:before{content:''; position:absolute; left:-60%; top:0; bottom:0; width:50%; background:linear-gradient(90deg,transparent,rgba(255,255,255,0.15),transparent); transform:skewX(-25deg); animation:badge 5s linear infinite;}
+@keyframes badge{0%{left:-60%;}100%{left:120%;}}
+.ctas { display:flex; flex-wrap:wrap; gap:16px; }
+.button { --btn-bg: var(--accent-grad); cursor:pointer; border:none; outline:none; padding: 14px 26px; font-size:.85rem; font-weight:600; letter-spacing:.08em; border-radius:14px; position:relative; overflow:hidden; background:var(--btn-bg); color:#07141f; text-decoration:none; box-shadow:0 8px 24px -6px #00f2fe55, inset 0 0 0 1px #ffffff1f; transition:var(--transition); }
+.button:hover { transform:translateY(-4px); box-shadow:0 16px 34px -8px #00f2fe55; }
+.button.outline { background:#101b2a; color:var(--accent); }
+.button.outline:hover { background:#142235; }
+
+.hero-right { position:relative; }
+.hero-image-wrapper { width: min(420px, 90%); aspect-ratio: 4/5; border-radius:38px; background: linear-gradient(160deg,#142235,#04070c); border:1px solid #1e3246; position:relative; overflow:hidden; box-shadow:0 18px 60px -18px #000, 0 0 0 6px #0c152233; }
+.hero-image-wrapper:before { content:''; position:absolute; inset:-40%; background:conic-gradient(from 0deg,#00f2fe22,#00f2fe00 40%,#38f9d722 55%,#38f9d700 70%,#4facfe22 85%, #4facfe00); animation:spin 14s linear infinite; filter:blur(55px); }
+@keyframes spin{to{transform:rotate(360deg);}}
+.hero-image-wrapper img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; filter:saturate(1.1) contrast(1.05); mix-blend-mode:normal; }
+.float-card { position:absolute; right:20px; top:20px; background:#0d1826dd; backdrop-filter:blur(12px); border:1px solid #274058; padding:16px 20px 18px; border-radius:24px; max-width:clamp(260px,48vw,380px); width:auto; box-shadow:0 8px 30px -12px #000; animation:float 6s ease-in-out infinite; }
+@keyframes float{0%,100%{transform:translateY(-8px);}50%{transform:translateY(8px);}}
+.float-card h3 { margin:0 0 8px; font-size:.85rem; letter-spacing:.08em; font-weight:600; color:var(--accent); }
+.float-card p { margin:0; font-size:.7rem; line-height:1.55; color:var(--text-dim); overflow-wrap:anywhere; }
+.type { display:inline-block; min-height:1.2em; position:relative; }
+.type:after { content:'|'; position:absolute; right:-10px; animation:blink 1s step-end infinite; color:var(--accent); }
+@keyframes blink{50%{opacity:0;}}
+
+/* Cards / grids */
+.grid { display:grid; gap:clamp(20px,2vw,34px); }
+.grid.tech { grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); }
+.card { --bg-card:#0c1623; background:linear-gradient(145deg,#0b1624,#07101a); border:1px solid #1e2f44; padding:24px 24px 28px; border-radius:26px; position:relative; overflow:hidden; box-shadow:0 10px 34px -18px #000; transition:var(--transition); }
+.card:before { content:''; position:absolute; inset:0; background:linear-gradient(120deg,transparent 0%,rgba(255,255,255,0.06) 45%,transparent 65%); opacity:0; transition:var(--transition); }
+.card:hover { transform:translateY(-8px) scale(1.02); border-color:#2b4661; }
+.card:hover:before{opacity:1;}
+.card h3 { margin:0 0 12px; font-size:1rem; letter-spacing:.05em; font-weight:600; color:var(--accent-alt); }
+.card p { margin:0; font-size:.8rem; line-height:1.6; color:var(--text-dim); }
+.card ul { margin:10px 0 0 1.2em; padding:0; font-size:.75rem; line-height:1.4; color:var(--text-dim); }
+.card ul li { margin:4px 0; }
+.tag-cloud { display:flex; flex-wrap:wrap; gap:8px; margin-top:14px; }
+.tag { background:#132132; color:var(--accent); font-size:.6rem; padding:6px 10px; border-radius:999px; letter-spacing:.08em; border:1px solid #1f3245; font-weight:500; }
+
+/* Timeline */
+.timeline { position:relative; padding-left:22px; }
+.timeline:before { content:''; position:absolute; left:7px; top:0; bottom:0; width:2px; background:linear-gradient(#00f2fe,#4facfe); border-radius:4px; }
+.milestone { position:relative; margin:0 0 34px; }
+.milestone:last-child{margin-bottom:0;}
+.milestone:before { content:''; position:absolute; left:-16px; top:6px; width:14px; height:14px; background:var(--accent-grad); border-radius:50%; box-shadow:0 0 0 4px #0c1828; }
+.milestone h4 { margin:0 0 6px; font-size:.9rem; font-weight:600; letter-spacing:.05em; }
+.milestone span.period { display:inline-block; font-size:.55rem; letter-spacing:.15em; text-transform:uppercase; background:#122030; padding:4px 8px; border-radius:8px; margin-bottom:8px; color:var(--accent); font-weight:600; }
+.milestone p { margin:0; font-size:.7rem; line-height:1.6; color:var(--text-dim); }
+
+/* Split Layout */
+.split { display:grid; gap:60px; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); align-items:start; }
+.highlight-box { background:linear-gradient(145deg,#101b2a,#07101a); border:1px solid #26384c; border-radius:30px; padding:34px clamp(26px,3vw,46px); position:relative; overflow:hidden; box-shadow:0 16px 50px -24px #000; }
+.highlight-box h3 { margin:0 0 18px; font-size:1.15rem; letter-spacing:.06em; font-weight:600; color:var(--accent); }
+.highlight-box ul { margin:0; padding:0 0 0 1.15em; font-size:.75rem; line-height:1.5; color:var(--text-dim); }
+.highlight-box li { margin:6px 0; }
+.highlight-box .equations { margin-top:22px; display:grid; gap:14px; }
+.equation { font-family: 'Cambria','Times New Roman',serif; font-size:.95rem; letter-spacing:.04em; background:#132132; padding:10px 16px; border-radius:14px; border:1px solid #24394f; box-shadow:inset 0 0 0 1px #203244; }
+
+/* Stats */
+.stats { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:22px; margin-top:40px; }
+.stat { background:#101b2a; border:1px solid #1f3144; padding:18px 20px 22px; border-radius:22px; position:relative; overflow:hidden; }
+.stat:before{content:''; position:absolute; inset:0; background:radial-gradient(circle at 25% 25%,#38f9d722,transparent 70%); mix-blend-mode:overlay; }
+.stat h4 { margin:0; font-size:2.1rem; font-weight:700; letter-spacing:.05em; background:var(--accent-grad); -webkit-background-clip:text; background-clip:text; color:transparent; }
+.stat span { display:block; font-size:.6rem; letter-spacing:.15em; text-transform:uppercase; margin-top:8px; color:var(--text-dim); font-weight:600; }
+
+/* Code box */
+/* Highlight style code blocks (from tech-portfolio adapted) */
+.highlight { position:relative; background:var(--pre-bg); border:1px solid #1f3448; padding:1.25rem 1.25rem 1.4rem; border-radius:26px; box-shadow:0 16px 46px -26px #000; overflow:auto; }
+.highlight pre { margin:0; line-height:1.55; font-family:var(--font-mono); font-size:.78rem; color:var(--pre-text); background:transparent; white-space:pre; }
+pre code { background:none; padding:0; font-family:inherit; font-size:inherit; color:inherit; display:block; }
+code { background:var(--code-bg); color:var(--code-text); padding:0.25rem 0.5rem; border-radius:var(--border-radius-sm); font-family:var(--font-mono); font-size:0.85em; border:1px solid var(--code-border); }
+.copy-btn { position:absolute; top:10px; right:14px; border:none; outline:none; background:#15263a; color:var(--accent); padding:6px 12px; font-size:.6rem; letter-spacing:.15em; cursor:pointer; border-radius:8px; font-weight:600; transition:var(--transition); }
+.copy-btn:hover{background:#1f3954;}
+
+/* Contact */
+.contact-grid { display:grid; gap:30px; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); margin-top:50px; }
+.contact-card { background:#101b2a; border:1px solid #213549; padding:30px 30px 36px; border-radius:30px; position:relative; overflow:hidden; }
+.contact-card h3 { margin:0 0 12px; font-size:1.05rem; letter-spacing:.05em; font-weight:600; color:var(--accent); }
+.contact-card p { margin:0 0 18px; font-size:.75rem; line-height:1.6; color:var(--text-dim); }
+.contact-links { display:flex; flex-wrap:wrap; gap:12px; }
+.contact-links a { background:#142235; padding:10px 14px; border-radius:12px; font-size:.65rem; letter-spacing:.12em; color:var(--accent); text-decoration:none; font-weight:600; transition:var(--transition); border:1px solid #203347; }
+.contact-links a:hover{background:#1d3149;}
+
+footer { padding:60px 20px 90px; text-align:center; font-size:.65rem; letter-spacing:.15em; color:#5f7b96; }
+footer p { margin:6px 0; }
+
+/* Animations (enter) */
+.fade-in { opacity:0; transform:translateY(40px); transition:1s cubic-bezier(.4,.13,0,1); }
+.fade-in.visible { opacity:1; transform:translateY(0); }
+
+/* Responsive Tweaks */
+@media (max-width:900px){
+  .float-card { position:relative; right:auto; top:auto; margin-top:20px; }
+}
+@media (max-width:640px){
+  nav ul { display:none; }
+  header { background:rgba(10,15,25,0.9); }
+  .hero-image-wrapper { margin:0 auto; }
+}
+
+/* Light theme support */
+.light { --bg:#f5f8fb; --bg-alt:#ecf3fa; --bg-grad:linear-gradient(160deg,#f0f7ff,#e0ecf7); --text:#1f2b36; --text-dim:#4b657d; }
+.light body{background:var(--bg-grad); color:var(--text);} 
+.light nav{background:rgba(255,255,255,0.55); border-bottom-color:#d4e1ee;} 
+.light nav a{color:#4b657d;} 
+.light nav a.active{color:#fff;} 
+.light .card{background:linear-gradient(145deg,#ffffff,#edf4fa); border-color:#c7d9e9;} 
+.light .badge{background:#e2eef8; color:#0072a8; border-color:#c7d9e9;} 
+.light .highlight-box{background:linear-gradient(145deg,#ffffff,#edf4fa); border-color:#c7d9e9;} 
+.light .stat{background:#ffffff; border-color:#c7d9e9;} 
+.light .contact-card{background:#ffffff; border-color:#c7d9e9;} 
+.light .code-box{background:#ffffff; border-color:#c7d9e9; color:#10324d;} 
+.light .copy-btn{background:#e2eef8;} 
+.light .equation{background:#f0f7ff; border-color:#d2e2ef;} 
+</style>
+</head>
+<body>
+<header>
+  <nav>
+    <div class="brand"><span class="logo">AS</span> <span>アトラジット・サーカー</span></div>
+    <ul id="navLinks">
+      <li><a href="#hero" class="active">トップ</a></li>
+      <li><a href="#tech">技術</a></li>
+      <li><a href="#math">数学</a></li>
+      <li><a href="#achievements">実績</a></li>
+      <li><a href="#education">学歴</a></li>
+      <li><a href="#code">コード</a></li>
+      <li><a href="#contact">連絡</a></li>
+    </ul>
+    <button id="themeToggle" aria-label="テーマ切替" title="テーマ切替">🌙</button>
+  </nav>
+</header>
+<main>
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-left fade-in">
+      <h1>数学と技術が交差する地点で <span class="gradient">価値を創造</span></h1>
+      <div class="lead">私は <strong>アトラジット・サーカー</strong>。IIT Delhi 数学修士。<span class="type" data-words='["フルスタック開発者","数学研究志向","数理的思考で設計","アルゴリズム美学","創造的ライター"]'></span><br><br>解析・数論・代数学の厳密さを、モバイルアプリ・バックエンド・ボット・AI 統合・3D シミュレーションといった現代的ソフトウェア工学に融合します。論理を磨き、表現を磨き、<em>ロジックは骨格、デザインは鼓動</em> という信条で構築。</div>
+      <div class="hero-meta">
+        <span class="badge">IIT DELHI 数学修士</span>
+        <span class="badge">研究志向</span>
+        <span class="badge">多言語プログラミング</span>
+        <span class="badge">オープンソース</span>
+      </div>
+      <div class="ctas">
+        <a class="button" href="#tech">技術スタックを見る</a>
+        <a class="button outline" href="#contact">連絡する</a>
+      </div>
+    </div>
+    <div class="hero-right fade-in" style="animation-delay:.2s">
+      <div class="hero-image-wrapper">
+        <img src="atrajitalumni.jpg" alt="Atrajit Sarkar" loading="lazy" />
+        <div class="float-card">
+          <h3>現在の焦点</h3>
+          <p>日本での博士課程 / Jetpack Compose / AWS自動化 / C++アニメーション / AI・機械学習</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TECH -->
+  <section id="tech" class="alt fade-in">
+    <h2>技術領域 / エンジニアリング</h2>
+    <p class="lead">数学的抽象化から生まれるシンプルさを核に、モダンスタックを体系的に統合。再現性・拡張性・可観測性を意識した設計。</p>
+    <div class="grid tech" style="margin-top:50px;">
+      <div class="card">
+        <h3>言語</h3>
+        <p>問題構造に適合する表現力とパフォーマンスを指向。</p>
+        <div class="tag-cloud">
+          <span class="tag">Python</span><span class="tag">C++</span><span class="tag">Java</span><span class="tag">JavaScript</span><span class="tag">TypeScript</span>
+        </div>
+      </div>
+      <div class="card">
+        <h3>フレームワーク & ライブラリ</h3>
+        <p>UI ～ データ処理～ バックエンドを最小摩擦で接続。</p>
+        <div class="tag-cloud">
+          <span class="tag">React</span><span class="tag">Next.js</span><span class="tag">Tailwind</span><span class="tag">Android</span><span class="tag">Jetpack Compose</span>
+        </div>
+      </div>
+      <div class="card">
+        <h3>ツール & プラットフォーム</h3>
+        <p>持続可能な開発と自動化を支える基盤。</p>
+        <div class="tag-cloud">
+          <span class="tag">Git</span><span class="tag">Docker</span><span class="tag">Linux</span><span class="tag">VS Code</span><span class="tag">Figma</span>
+        </div>
+      </div>
+      <div class="card">
+        <h3>特徴的プロジェクト</h3>
+        <ul>
+          <li>AI 統合チャットボット（Telegram / WhatsApp）</li>
+          <li>C++ 3D シミュレーション（幾何＋線形代数）</li>
+          <li>Android アプリ（Compose + クリーンアーキ）</li>
+          <li>自動化スクリプト & 分析パイプライン</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>設計哲学</h3>
+        <p>数理的思考で複雑性を圧縮: 不変条件 / 対称性 / 演算子視点で API を組成。</p>
+      </div>
+      <div class="card">
+        <h3>価値指標</h3>
+        <ul>
+          <li>保守性 > 短期速度</li>
+          <li>計測可能な改善</li>
+          <li>型体系によるバグ抑制</li>
+          <li>直交性 & 拡張性</li>
+        </ul>
+      </div>
+    </div>
+    <div class="stats">
+      <div class="stat"><h4>466+</h4><span>今年のコミット</span></div>
+      <div class="stat"><h4>10+</h4><span>主要プロジェクト</span></div>
+      <div class="stat"><h4>5+</h4><span>使用言語</span></div>
+      <div class="stat"><h4>2+</h4><span>年の開発経験</span></div>
+    </div>
+  </section>
+
+  <!-- MATH -->
+  <section id="math" class="fade-in">
+    <h2>数学的関心領域 / 研究志向</h2>
+    <div class="split">
+      <div class="highlight-box">
+        <h3>主たる分野</h3>
+        <ul>
+          <li><strong>数論:</strong> 多重ゼータ値・解析的手法・合同性</li>
+          <li><strong>解析学:</strong> 実解析 / 複素解析の構造的洞察</li>
+          <li><strong>代数学:</strong> 群論・環論がもたらす対称性の抽象</li>
+          <li><strong>アルゴリズム数学:</strong> 計算複雑性と数理最適化</li>
+        </ul>
+        <div class="equations">
+          <div class="equation">$$\int_{-\infty}^{\infty} e^{-x^2} \, dx = \sqrt{\pi}$$</div>
+          <div class="equation">$$e^{i\pi} + 1 = 0$$</div>
+          <div class="equation">$$\sum_{n=1}^{\infty} \frac{1}{n^{2}} = \frac{\pi^{2}}{6}$$</div>
+        </div>
+      </div>
+      <div class="highlight-box">
+        <h3>アプローチと美学</h3>
+        <p class="lead" style="font-size:.85rem;">証明は構造の露出、コードは構造の具現化。境界条件と不変量を先に固定し、抽象から具体への写像として実装をモデル化。</p>
+        <ul>
+          <li>抽象代数的視点でデータモデルを正規化</li>
+          <li>解析的直感を複雑性削減に転写</li>
+          <li>対称性検出 → テストケース生成</li>
+          <li>系列 / 漸化式 → キャッシュ戦略</li>
+        </ul>
+        <div class="equations" style="margin-top:26px;">
+          <div class="equation">"言葉が方程式なら、沈黙は定理"</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACHIEVEMENTS -->
+  <section id="achievements" class="alt fade-in">
+    <h2>主なハイライト / 実績</h2>
+    <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); margin-top:40px;">
+      <div class="card"><h3>学術的卓越性</h3><p>IIT Delhi にて数学修士。解析的洞察と数論的直感を融合。</p></div>
+      <div class="card"><h3>フルスタック開発</h3><p>モバイル（Compose）からバックエンド自動化まで一気通貫。</p></div>
+      <div class="card"><h3>クリエイティブライティング</h3><p>英語 & ベンガル語詩集『Silhouette of Words』で論理と情感を統合。</p></div>
+      <div class="card"><h3>教育 / 指導</h3><p>複雑な数学概念を視覚化と直観で再構築し共有。</p></div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education" class="fade-in">
+    <h2>学歴 / 学習タイムライン</h2>
+    <div class="timeline" style="margin-top:40px;">
+      <div class="milestone">
+        <span class="period">現在</span>
+        <h4>博士課程志望（数論 / 解析 / 代数）</h4>
+        <p>多重ゼータ値など高度構造の文献読解を継続。研究命題の精緻化。</p>
+      </div>
+      <div class="milestone">
+        <span class="period">修士</span>
+        <h4>IIT Delhi - 数学修士</h4>
+        <p>解析学・数論・抽象代数で理論的基盤を深化。証明戦略と計算実験の橋渡し。</p>
+      </div>
+      <div class="milestone">
+        <span class="period">探究</span>
+        <h4>独習 & オープンソース</h4>
+        <p>実用アルゴリズム設計を OSS 実装で検証。学習を公開資産へ転写。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CODE SAMPLE -->
+  <section id="code" class="alt fade-in">
+    <h2>コード断片 / 思考の翻訳</h2>
+    <p class="lead">再帰構造・不変量・部分問題分解を明快に保ち、読みやすさと計算的透明性を同居させる。</p>
+    <div class="code-block-wrapper" id="codeBlock" data-lang="python" data-code="def fibonacci(n):\n    if n <= 1:\n        return n\n    return fibonacci(n-1) + fibonacci(n-2)\n\nprint([fibonacci(i) for i in range(10)])\n">
+      <div class="code-header">
+        <div class="window-dots"><span></span><span></span><span></span></div>
+        <div class="lang">Python</div>
+        <div class="code-toolbar-buttons">
+          <button id="copyBtn" aria-label="コピー"><span>📋</span>コピー</button>
+        </div>
+      </div>
+      <pre><code class="language-python" id="codeContent">def fibonacci(n):
+    if n <= 1:
+        return n
+    return fibonacci(n-1) + fibonacci(n-2)
+
+print([fibonacci(i) for i in range(10)])
+</code></pre>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="fade-in">
+    <h2>コンタクト / コネクション</h2>
+    <p class="lead">研究協働・開発・教育・ライティングの機会歓迎。問題定式化から最適解の創出まで。</p>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <h3>連絡先</h3>
+        <p><strong>メール (研究):</strong> atrajit.sarkar@alumni.iitd.ac.in<br><strong>メール (技術):</strong> atrajit.sarkar@gongobongo.org</p>
+        <div class="contact-links">
+          <a href="https://github.com/atrajit-sarkar" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://www.linkedin.com/in/atrajit-sarkar-1729xxx1729/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://x.com/AtrajitSarkar" target="_blank" rel="noopener">Twitter</a>
+          <a href="https://atrajit-sarkar.gongobongo.org/" target="_blank" rel="noopener">Tech</a>
+          <a href="https://www.atraj.it/" target="_blank" rel="noopener">Math</a>
+        </div>
+      </div>
+      <div class="contact-card">
+        <h3>価値提供の指針</h3>
+        <p>数理的厳密さ + UI/UX 美学 + 開発運用自動化を融合。<br>抽象→設計→検証→展開のライフサイクルを最短閉包。</p>
+        <ul style="font-size:.7rem; line-height:1.5; color:var(--text-dim); margin:0; padding:0 0 0 1.2em;">
+          <li>型安全 & 設計契約</li>
+          <li>計測主導の最適化</li>
+          <li>リファクタリングベクトルの可視化</li>
+          <li>数理的抽象に基づく API 設計</li>
+        </ul>
+      </div>
+      <div class="contact-card">
+        <h3>ステータス</h3>
+        <p>現在: <strong>博士課程応募準備中</strong>（数論・解析・代数） / 新しい研究 & 開発コラボにオープン。</p>
+        <div class="tag-cloud">
+          <span class="tag">研究パートナー</span>
+          <span class="tag">教育支援</span>
+          <span class="tag">OSS 貢献</span>
+          <span class="tag">AI 応用</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<footer>
+  <p>© 2025 アトラジット・サーカー — 数学 × 技術 × 創造</p>
+  <p>言葉が方程式なら、沈黙は定理。</p>
+</footer>
+<script>
+// Intersection Observer for fade-ins
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); } });
+}, { threshold:0.2 });
+[...document.querySelectorAll('.fade-in')].forEach(el=>observer.observe(el));
+
+// Scroll spy
+const sections = [...document.querySelectorAll('section[id]')];
+const navLinks = [...document.querySelectorAll('#navLinks a')];
+const spy = () => {
+  const scrollPos = window.scrollY + window.innerHeight/3;
+  let currentId = sections[0].id;
+  for(const s of sections){ if(scrollPos >= s.offsetTop) currentId = s.id; }
+  navLinks.forEach(a=>{ a.classList.toggle('active', a.getAttribute('href') === '#'+currentId); });
+};
+window.addEventListener('scroll', spy);
+
+// Typed effect
+const typeEl = document.querySelector('.type');
+if(typeEl){
+  const words = JSON.parse(typeEl.dataset.words);
+  let wi=0, ci=0, deleting=false; 
+  const speed = () => deleting ? 55 : 110;
+  const loop = () => {
+    const w = words[wi];
+    typeEl.textContent = w.slice(0,ci);
+    if(!deleting && ci === w.length){ setTimeout(()=> deleting = true, 1200);} 
+    else if(deleting && ci === 0){ deleting = false; wi = (wi+1)%words.length; }
+    ci += deleting ? -1 : 1;
+    setTimeout(loop, speed());
+  }; loop();
+}
+
+// Copy code (updated for new highlight structure)
+const enhanceCodeBlock = () => {
+  const block = document.getElementById('codeBlock');
+  if(!block) return;
+  const codeEl = document.getElementById('codeContent');
+  if(codeEl){
+    // Highlight.js invocation (if loaded)
+    if(window.hljs){ window.hljs.highlightElement(codeEl); }
+    // Wrap lines for line numbers
+    const src = codeEl.textContent.replace(/\n$/,'');
+    const lines = src.split('\n');
+    codeEl.innerHTML = lines.map(l=>`<span class="code-line">${l.replace(/</g,'&lt;')}</span>`).join('\n');
+  }
+  const copyBtn = document.getElementById('copyBtn');
+  if(copyBtn){
+    copyBtn.addEventListener('click',()=>{
+      const raw = block.dataset.code || codeEl.textContent.replace(/<[^>]+>/g,'');
+      navigator.clipboard.writeText(raw).then(()=>{
+        copyBtn.innerHTML='✅ コピー済';
+        setTimeout(()=> copyBtn.innerHTML='📋 コピー', 2000);
+      });
+    });
+  }
+};
+window.addEventListener('load', enhanceCodeBlock);
+
+// Theme toggle
+const themeBtn = document.getElementById('themeToggle');
+const applyTheme = (t)=> { document.documentElement.classList.toggle('light', t==='light'); themeBtn.textContent = t==='light' ? '🌙' : '☀️'; localStorage.setItem('theme', t); };
+const saved = localStorage.getItem('theme'); applyTheme(saved || 'dark');
+themeBtn.addEventListener('click', ()=>{ const next = document.documentElement.classList.contains('light') ? 'dark':'light'; applyTheme(next); });
+
+</script>
+</body>
+</html>
